@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TicTacDeath</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,8 +10,188 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="./app/auth/logic.js" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Tic Tac Death</h1>
+      <h2> Care To Play A Game?</h2>
+      
+      <section id="before-sign-in">
+        <!-- Sign up form goes here -->
+        <div class="everything">
+
+          <div class="ss-form">
+            
+            <div class="card">
+              <div class="card-body">
+                <form id="sign-up" class="border">
+                  <!-- fieldset is used to group multiple inputs together -->
+                  
+                  <fieldset>
+                    <legend>Sign Up</legend>
+                    <input type="email" name="credentials[email]" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" required>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                  </fieldset>
+                </form>
+                <!-- Sign In form goes here -->
+                <form id="sign-in" class="border">
+                  <!-- fieldset is used to group multiple inputs together -->
+                  <fieldset>
+                    <legend>Sign In</legend>
+                    <input type="email" name="credentials[email]" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" required>
+                    <button class="btn btn-success" type="submit">Sign In</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+        
+      <!-- only want to be visible after we sign-in
+        by default it should not be displayed 
+        our scss will help us with that-->
+      <!-- Change password and sign-out forms -->
+      <section id="after-sign-in">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Welcom To Tic-Tac-Toe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Ask Sean For Help</a></li>
+            <li><a class="dropdown-item" href="#">Ask Weston For Help</a></li>
+            <!-- <li><hr class="dropdown-divider"></li> -->
+            <li><a class="dropdown-item" href="#">Ask Ben For Help</a></li>
+          </ul>
+          <li>
+            <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign In 
+          </button>
+        </li>
+          
+        <!-- <div class="searchBar">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+    </div>
+  </div>
+</nav>
+        <!-- required 'container' class wrapper for our rows/columns -->
+        <div class="tictactoeboard">
+
+          <div class="card" style="width: 40rem;">
+            <div class="card-body">
+              
+              <div class="container">
+                <!-- <h1>3x3 Grid small</h1>
+                  <h2>Let's make some grids!</h2> -->
+                  
+                  <div class="col-4 box" id="sq1"></div>
+                  <div class="col-4 box" id="sq2"></div>
+                  <div class="col-4 box" id="sq3"></div>
+                  
+                  
+                  <div class="col-4 box" id="sq4"></div>
+                  <div class="col-4 box" id="sq5"></div>
+                  <div class="col-4 box" id="sq6"></div>
+                  
+                  
+                  <div class="col-4 box" id="sq7"></div>
+                  <div class="col-4 box" id="sq8"></div>
+                  <div class="col-4 box" id="sq9"></div>
+                  
+                </div>
+                
+              </div>
+            </div>
+          </div>
+            
+          <!-- Code along modal -->
+          <!-- Button trigger modal -->
+          <div class="game-buttons">
+            <button id="startGame">Start Game</button>
+            <button id="resetBtn">Rest Game</button>
+        </div>
+          <div class="b-out">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">B***h Out</button>
+          </div>
+          
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Why do you want to give up</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+       <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+    <div class="mb-3">
+      <input type="password" class="form-control" id="inputPassword" placeholder="password">
+    </div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">How are you feeling today?</label>
+  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+       <form id="change-password" class="border">
+          <!-- fieldset is used to group multiple inputs together -->
+          <fieldset>
+            <legend>Change Password</legend>
+            <input type="password" name="passwords[old]" placeholder="Old Password" required>
+            <input type="password" name="passwords[new]" placeholder="New Password" required>
+            <button class="btn btn-primary" type="submit">Change Password</button>
+          </fieldset>
+        </form>
+
+        <form id="sign-out" class="border">
+          <!-- fieldset is used to group multiple inputs together -->
+          <fieldset>
+            <h3>Sign Out</h3>
+            <button class="btn btn-danger" type="submit">Sign Out</button>
+          </fieldset>
+        </form>
+
+
+      </section>
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="user-display"></div>
+      </section>
     </body>
+
 </html>
