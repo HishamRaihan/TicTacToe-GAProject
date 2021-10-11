@@ -46,7 +46,7 @@ const signOut = function (formData) {
 	});
 }
 	
-const startGame = function (formData) {
+const startGame = function () {
   return $.ajax({
     url: `${config.apiUrl}/games`,
     method: "POST",

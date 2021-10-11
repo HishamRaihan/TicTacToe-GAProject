@@ -94,6 +94,7 @@ const startGameSuccess = function(responseData){
 	$("#user-display").text("Game Started Successfully!");
   $("#user-display").removeClass();
   $("#user-display").addClass("text-success");
+	console.log(responseData);
 }
 
 module.exports = {

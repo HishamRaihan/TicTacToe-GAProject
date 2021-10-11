@@ -9,22 +9,15 @@ const authEvents = require("./auth/events");
 $(() => {
   // your JS code goes here
   $("#sign-up").on("submit", authEvents.onSignUp);
-});
 
-$(() => {
   // your JS code goes here
   $("#sign-in").on("submit", authEvents.onSignIn);
-});
 
-$(() => {
   // your JS code goes here
   $("#change-password").on("submit", authEvents.onChangePassword);
-});
 
-$(() => {
   // your JS code goes here
   $("#sign-out").on("click", authEvents.onSignOut);
 
-  $('#start-game').on('click', authEvents.onStartGame)
-  
+  $("#start-game").on("click", authEvents.onStartGame);
 });

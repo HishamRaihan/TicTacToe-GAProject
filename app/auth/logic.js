@@ -1,4 +1,4 @@
-const startBtn = document.getElementById('startGame');
+const startBtn = document.getElementById('start-game');
 const resetBtn = document.getElementById('resetBtn');
 let boxes = document.querySelectorAll('.col-4');
 // boxaures
