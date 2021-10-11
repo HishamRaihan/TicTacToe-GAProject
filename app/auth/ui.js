@@ -1,7 +1,7 @@
 'use strict';
 // require the store object
 // we will use it to share data between files
-require('./logic')
+require('./functions')
 const store = require('../store');
 
 const playGame = () =>{
@@ -36,7 +36,7 @@ const signInSuccess = function (responseData) {
 	// to the store object. so we can access the users token
 	// later in api.js
 	store.user = responseData.user;
-  console.log('store is', store);
+  console.log('User is', store);
   // tell user sign in was successful
 	$('#user-display').text('Sign In Successful!');
 	$('#user-display').removeClass();
@@ -94,7 +94,7 @@ const startGameSuccess = function(responseData){
 	$("#user-display").text("Game Started Successfully!");
   $("#user-display").removeClass();
   $("#user-display").addClass("text-success");
-	console.log(responseData);
+	console.log('game',responseData);
 }
 
 module.exports = {

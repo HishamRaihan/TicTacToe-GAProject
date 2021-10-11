@@ -1,3 +1,4 @@
+// is it better to log the cells at the end or during each turn
 const startBtn = document.getElementById('start-game');
 const resetBtn = document.getElementById('resetBtn');
 let boxes = document.querySelectorAll('.col-4');
