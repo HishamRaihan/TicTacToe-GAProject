@@ -24,4 +24,7 @@ $(() => {
 $(() => {
   // your JS code goes here
   $("#sign-out").on("click", authEvents.onSignOut);
+
+  $('#start-game').on('click', authEvents.onStartGame)
+  
 });

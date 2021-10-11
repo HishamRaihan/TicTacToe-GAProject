@@ -1,19 +1,21 @@
 const startBtn = document.getElementById('startGame');
 const resetBtn = document.getElementById('resetBtn');
 let boxes = document.querySelectorAll('.col-4');
-// Sqaures
-const sq1 = document.getElementById('sq1');
-const sq2 = document.getElementById('sq2');
-const sq3 = document.getElementById('sq3');
-const sq4 = document.getElementById('sq4');
-const sq5 = document.getElementById('sq5');
-const sq6 = document.getElementById('sq6');
-const sq7 = document.getElementById('sq7');
-const sq8 = document.getElementById('sq8');
-const sq9 = document.getElementById('sq9');
+// boxaures
+const box1 = document.getElementById('box1');
+const box2 = document.getElementById('box2');
+const box3 = document.getElementById('box3');
+const box4 = document.getElementById('box4');
+const box5 = document.getElementById('box5');
+const box6 = document.getElementById('box6');
+const box7 = document.getElementById('box7');
+const box8 = document.getElementById('box8');
+const box9 = document.getElementById('box9');
 
 // boxes = Array.from(boxes)
 let complete = false;
+// made emoji a global variabl so when i return '' it returns the emoji on its respective turn
+let emoji = '';
 // counter when ever this function is Invoked turn increases by 1
 let turn = 0;
 console.log(turn);
@@ -24,70 +26,73 @@ function counting() {
 
 //returns X or O depending on the turn if turn is even or odd
 const playerTurn = (turn) => {
+	// $("col-4").css("font-size", "xx-large");
 	if (turn % 2 === 0) {
-		return 'x';
+		
+		return emoji = '🔪';
 	} else {
-		return 'o';
+		return emoji = '🥔';
 	}
+	
 };
 
-//passes in a square param and adds the X or O in to the text content of the html
-function XtoO(sq) {
-	if (sq.innerText === '' && complete === false) {
-		sq.textContent = playerTurn(turn);
+//passes in a boxuare param and adds the X or O in to the text content of the html
+function XtoO(box) {
+	if (box.innerText === '' && complete === false) {
+		box.textContent = playerTurn(turn);
 		winningCondition();
 		return counting();
 	}
 }
 
 startBtn.addEventListener('click', () => {
-	//adds event listener to each square and bind the function
+	//adds event listener to each boxuare and bind the function
 	//to the element so we can pass it in
-	sq1.addEventListener('click', XtoO.bind(this, sq1));
-	sq2.addEventListener('click', XtoO.bind(this, sq2));
-	sq3.addEventListener('click', XtoO.bind(this, sq3));
-	sq4.addEventListener('click', XtoO.bind(this, sq4));
-	sq5.addEventListener('click', XtoO.bind(this, sq5));
-	sq6.addEventListener('click', XtoO.bind(this, sq6));
-	sq7.addEventListener('click', XtoO.bind(this, sq7));
-	sq8.addEventListener('click', XtoO.bind(this, sq8));
-	sq9.addEventListener('click', XtoO.bind(this, sq9));
+	box1.addEventListener('click', XtoO.bind(this, box1));
+	box2.addEventListener('click', XtoO.bind(this, box2));
+	box3.addEventListener('click', XtoO.bind(this, box3));
+	box4.addEventListener('click', XtoO.bind(this, box4));
+	box5.addEventListener('click', XtoO.bind(this, box5));
+	box6.addEventListener('click', XtoO.bind(this, box6));
+	box7.addEventListener('click', XtoO.bind(this, box7));
+	box8.addEventListener('click', XtoO.bind(this, box8));
+	box9.addEventListener('click', XtoO.bind(this, box9));
 });
 
 function winningCondition() {
 	if (
-		(sq1.innerText === 'x' && sq2.innerText === 'x' && sq3.innerText === 'x') ||
-		(sq4.innerText === 'x' && sq5.innerText === 'x' && sq6.innerText === 'x') ||
-		(sq7.innerText === 'x' && sq8.innerText === 'x' && sq9.innerText === 'x') ||
-		(sq1.innerText === 'x' && sq5.innerText === 'x' && sq9.innerText === 'x') ||
-		(sq7.innerText === 'x' && sq5.innerText === 'x' && sq3.innerText === 'x') ||
-		(sq1.innerText === 'x' && sq4.innerText === 'x' && sq7.innerText === 'x') ||
-		(sq2.innerText === 'x' && sq5.innerText === 'x' && sq8.innerText === 'x') ||
-		(sq3.innerText === 'x' && sq6.innerText === 'x' && sq9.innerText === 'x')
+		(box1.innerText === '🔪' && box2.innerText === '🔪' && box3.innerText === '🔪') ||
+		(box4.innerText === '🔪' && box5.innerText === '🔪' && box6.innerText === '🔪') ||
+		(box7.innerText === '🔪' && box8.innerText === '🔪' && box9.innerText === '🔪') ||
+		(box1.innerText === '🔪' && box5.innerText === '🔪' && box9.innerText === '🔪') ||
+		(box7.innerText === '🔪' && box5.innerText === '🔪' && box3.innerText === '🔪') ||
+		(box1.innerText === '🔪' && box4.innerText === '🔪' && box7.innerText === '🔪') ||
+		(box2.innerText === '🔪' && box5.innerText === '🔪' && box8.innerText === '🔪') ||
+		(box3.innerText === '🔪' && box6.innerText === '🔪' && box9.innerText === '🔪')
 	) {
-		console.log('X wins');
+		console.log('🔪 wins');
 		console.log(turn);
 		complete = true;
 	} else if (
-		(sq1.innerText === 'o' && sq2.innerText === 'o' && sq3.innerText === 'o') ||
-		(sq4.innerText === 'o' && sq5.innerText === 'o' && sq6.innerText === 'o') ||
-		(sq7.innerText === 'o' && sq8.innerText === 'o' && sq9.innerText === 'o') ||
-		(sq1.innerText === 'o' && sq5.innerText === 'o' && sq9.innerText === 'o') ||
-		(sq7.innerText === 'o' && sq5.innerText === 'o' && sq3.innerText === 'o') ||
-		(sq1.innerText === 'o' && sq4.innerText === 'o' && sq7.innerText === 'o') ||
-		(sq2.innerText === 'o' && sq5.innerText === 'o' && sq8.innerText === 'o') ||
-		(sq3.innerText === 'o' && sq6.innerText === 'o' && sq9.innerText === 'o')
+		(box1.innerText === '🥔' && box2.innerText === '🥔' && box3.innerText === '🥔') ||
+		(box4.innerText === '🥔' && box5.innerText === '🥔' && box6.innerText === '🥔') ||
+		(box7.innerText === '🥔' && box8.innerText === '🥔' && box9.innerText === '🥔') ||
+		(box1.innerText === '🥔' && box5.innerText === '🥔' && box9.innerText === '🥔') ||
+		(box7.innerText === '🥔' && box5.innerText === '🥔' && box3.innerText === '🥔') ||
+		(box1.innerText === '🥔' && box4.innerText === '🥔' && box7.innerText === '🥔') ||
+		(box2.innerText === '🥔' && box5.innerText === '🥔' && box8.innerText === '🥔') ||
+		(box3.innerText === '🥔' && box6.innerText === '🥔' && box9.innerText === '🥔')
 	) {
-		console.log('O wins');
-		console.log(turn);
+		console.log(`${emoji} wins`);
+		console.log(emoji);
 		complete = true;
 	} else if (turn === 8) {
 		console.log('Tie Game!');
-		console.log(turn);
+		//console.log(emoji);
 		complete = true;
 	} else {
-		console.log('Play Again!');
-		console.log(turn);
+		console.log(`It's was ${emoji}  turn`);
+	//	console.log(turn);
 	}
 }
 function resetBoard() {

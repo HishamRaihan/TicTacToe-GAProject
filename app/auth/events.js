@@ -1,4 +1,5 @@
 'use strict';
+
 // require the getFormFields funciton to get data from our forms
 const getFormFields = require('../../lib/get-form-fields');
 // require our api auth funcitons
@@ -43,15 +44,24 @@ const onChangePassword = function (event) {
 }
 
 const onSignOut = function (event){
+	event.preventDefault();
 	api.signOut()
 		.then(ui.signOutSuccess)
 		.catch(ui.signOutFailure);
+}
+const onStartGame = function (event){
+	event.preventDefault()
+	const form = event.target
+	api.startGame(form)
+.then(ui.startGameSuccess)
+.catch(ui.onStartGameFailure)
 }
 
 module.exports = {
 	onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+	onStartGame
   
 };

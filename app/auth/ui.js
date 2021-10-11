@@ -1,6 +1,7 @@
 'use strict';
 // require the store object
 // we will use it to share data between files
+require('./logic')
 const store = require('../store');
 
 const playGame = () =>{
@@ -50,7 +51,7 @@ const signInSuccess = function (responseData) {
 };
 
 const signInFailure = function (error) {
-	$('#error-message').text('Sign up Failed!');
+	$('#error-message').text('Sign In Failed!');
 	$('#error-message').removeClass();
 	$('#error-message').addClass('text-danger');
 	console.log('error is', error);
@@ -89,6 +90,11 @@ const signOutFailure = function (error) {
 	$('#error-message').addClass('text-danger');
 	console.error('error is', error);
 };
+const startGameSuccess = function(responseData){
+	$("#user-display").text("Game Started Successfully!");
+  $("#user-display").removeClass();
+  $("#user-display").addClass("text-success");
+}
 
 module.exports = {
 	signUpFailure,
@@ -99,5 +105,6 @@ module.exports = {
   changePasswordFailure,
   signOutSuccess,
   signOutFailure,
-	playGame
+	playGame,
+	startGameSuccess,
 };
