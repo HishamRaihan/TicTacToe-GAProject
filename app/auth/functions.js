@@ -45,6 +45,7 @@ function XtoO(box) {
 		return counting();
 	}
 }
+// make a post request each time the event is clicked 
 
 startBtn.addEventListener('click', () => {
 	//adds event listener to each boxuare and bind the function
@@ -96,6 +97,7 @@ function winningCondition() {
 	//	console.log(turn);
 	}
 }
+// post for after winning 
 function resetBoard() {
 	boxes.forEach((box) => {
 		box.innerText = '';
