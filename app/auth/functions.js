@@ -1,6 +1,7 @@
 // is it better to log the cells at the end or during each turn
 const startBtn = document.getElementById('start-game');
-const resetBtn = document.getElementById('resetBtn');
+const resetBtn = document.getElementById('reset-game');
+const displayResult = document.getElementById('display-result');
 let boxes = document.querySelectorAll('.col-4');
 // boxaures
 const box1 = document.getElementById('box1');
@@ -72,7 +73,9 @@ function winningCondition() {
 		(box2.innerText === '🔪' && box5.innerText === '🔪' && box8.innerText === '🔪') ||
 		(box3.innerText === '🔪' && box6.innerText === '🔪' && box9.innerText === '🔪')
 	) {
-		console.log('🔪 wins');
+		console.log(`${emoji} wins`);
+		displayResult.innerText = `${emoji} wins`;
+
 		console.log(turn);
 		complete = true;
 	} else if (
@@ -86,7 +89,8 @@ function winningCondition() {
 		(box3.innerText === '🥔' && box6.innerText === '🥔' && box9.innerText === '🥔')
 	) {
 		console.log(`${emoji} wins`);
-		console.log(emoji);
+		//console.log(emoji);
+		displayResult.innerText = `${emoji} wins`
 		complete = true;
 	} else if (turn === 8) {
 		console.log('Tie Game!');

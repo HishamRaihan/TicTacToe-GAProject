@@ -6,6 +6,7 @@ const getFormFields = require('../../lib/get-form-fields');
 const api = require('./api');
 // require our ui funcitnos to update the page
 const ui = require('./ui');
+const functions = require('./functions')
 
 const onSignUp = function (event) {
 	// prevent the default action of refreshing
@@ -53,7 +54,7 @@ const onStartGame = function (event){
 	event.preventDefault()
 	const form = event.target
 	api.startGame(form)
-.then(ui.startGameSuccess)
+.then(ui.startGameSuccess, functions)
 .catch(ui.onStartGameFailure)
 }
 

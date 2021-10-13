@@ -22,7 +22,7 @@
 
           <div class="ss-form"> 
             
-            <div class="card">
+            <div class="card" id="front-card">
               <div class="card-body">
                 <form id="sign-up" class="border">
                   <!-- fieldset is used to group multiple inputs together -->
@@ -109,17 +109,17 @@
     </div>
   </div>
 </nav>
-        <!-- required 'container' class wrapper for our rows/columns -->
-        <div class="tictactoeboard">
-
-          <div class="card" style="width: 50rem;">
+<!-- required 'container' class wrapper for our rows/columns -->
+<div class="tictactoeboard">
+  <div class="card" id="board-card" style="width: 500px;">
+    <div>
+        <h2  id="display-result"></h2>
+    </div>
             <div class="card-body">
               
               <div class="container">
-                <!-- <h1>3x3 Grid small</h1>
-                  <h2>Let's make some grids!</h2> -->
-                  <!-- access the index  -->
-                  <!-- <div data-cell-index='0'></div> -->
+               
+              
                   <div class="col-4 box" name = "game[cells][0]" id="box1"></div>
                   <div class="col-4 box" name = "game[cells][1]" id="box2"></div>
                   <div class="col-4 box" name = "game[cells][2]" id="box3"></div>
@@ -139,8 +139,8 @@
           <!-- Code along modal -->
           <!-- Button trigger modal -->
           <div class="game-buttons">
-            <button id="start-game">Start Game</button>
-            <button id="resetBtn">Rest Game</button>
+            <button class = "button-style btn btn-outline-light" id="start-game">Start Game</button>
+            <button class = "button-style btn btn-outline-light" id="reset-game">Rest Game</button>
         </div>
           <!-- <div class="b-out">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">B***h Out</button>
