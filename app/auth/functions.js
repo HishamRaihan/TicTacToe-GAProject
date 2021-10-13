@@ -30,7 +30,6 @@ function counting() {
 const playerTurn = (turn) => {
 	// $("col-4").css("font-size", "xx-large");
 	if (turn % 2 === 0) {
-		
 		return emoji = '🔪';
 	} else {
 		return emoji = '🥔';
