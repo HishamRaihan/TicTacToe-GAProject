@@ -106,6 +106,7 @@ function resetBoard() {
 		box.innerText = '';
 		console.log('removed');
 		turn = 0;
+		displayResult.innerText = '';
 		complete = false;
 	});
 	return turn;

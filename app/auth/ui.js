@@ -35,6 +35,13 @@ const signUpFailure = function (error) {
 	$('#error-message').addClass('text-danger').removeClass(5000);
 	// print the error
 	console.error('error is', error);
+	setTimeout(() => {
+    // remove the message fromuser-display
+    $("#error-message").html("");
+    // remove the green color causes by `text-success`
+    $("#user-message").removeClass("text-danger");
+  }, 5000);
+  $("form").trigger("reset");
 };
 
 const signInSuccess = function (responseData) {
@@ -47,13 +54,6 @@ const signInSuccess = function (responseData) {
 	$('#user-display').text('Sign In Successful!');
 	$('#user-display').removeClass();
 	$('#user-display').addClass('text-success');
-	setTimeout(() => {
-		// remove the message fromuser-display
-		$("user-display").html("");
-		// remove the green color causes by `text-success`
-		$("user-display").removeClass("text-success");
-		$('form').trigger('reset');
-}, 5000);
 	// after we sign-in we hide the section before-sign-in
 	$('#before-sign-in').hide();
 	// after we sign-in we show the section after-sign-in
@@ -62,10 +62,11 @@ const signInSuccess = function (responseData) {
 	console.log('responseData is', responseData);
 	setTimeout(() => {
     // remove the message fromuser-display
-    $("user-display").html("");
+    $("#user-display").html("");
     // remove the green color causes by `text-success`
-    $("user-display").removeClass("text-success");
+    $("#user-display").removeClass("text-success");
   }, 5000);
+  $("form").trigger("reset");
 };
 
 const signInFailure = function (error) {
@@ -113,15 +114,35 @@ const signOutFailure = function (error) {
 	$('#error-message').removeClass();
 	$('#error-message').addClass('text-danger');
 	console.error('error is', error);
+	setTimeout(() => {
+    // remove the message fromuser-display
+    $("#user-display").html("");
+    // remove the green color causes by `text-success`
+    $("#user-display").removeClass("text-danger");
+  }, 5000);
+  $("form").trigger("reset");
 };
 const startGameSuccess = function(responseData){
 	$("#user-display").text("Game Started Successfully!");
   $("#user-display").addClass("text-success");
   $("#user-display").removeClass(5000);
 	console.log('game',responseData);
+	setTimeout(() => {
+    // remove the message fromuser-display
+    $("#user-display").html("");
+    // remove the green color causes by `text-success`
+    $("#user-display").removeClass("text-success");
+  }, 5000);
+  $("form").trigger("reset");
+}
+const startGameFailure = function(error){
+	$("#error-message").text("Sign Out Failed!");
+  $("#error-message").removeClass();
+  $("#error-message").addClass("text-danger");
+  console.error("error is", error);
 }
 const onWin = function(responseData){
-	$('#display-result').removeClass(5000)
+
 }
 
 module.exports = {
@@ -135,4 +156,5 @@ module.exports = {
   signOutFailure,
 	playGame,
 	startGameSuccess,
+	startGameFailure
 };
