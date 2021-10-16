@@ -61,32 +61,31 @@ startBtn.addEventListener("click", () => {
 });
 
 function winningCondition() {
-  if (
-    (box1.innerText === "🔪" &&
-      box2.innerText === "🔪" &&
-      box3.innerText === "🔪") ||
-    (box4.innerText === "🔪" &&
-      box5.innerText === "🔪" &&
-      box6.innerText === "🔪") ||
-    (box7.innerText === "🔪" &&
-      box8.innerText === "🔪" &&
-      box9.innerText === "🔪") ||
-    (box1.innerText === "🔪" &&
-      box5.innerText === "🔪" &&
-      box9.innerText === "🔪") ||
-    (box7.innerText === "🔪" &&
-      box5.innerText === "🔪" &&
-      box3.innerText === "🔪") ||
-    (box1.innerText === "🔪" &&
-      box4.innerText === "🔪" &&
-      box7.innerText === "🔪") ||
-    (box2.innerText === "🔪" &&
-      box5.innerText === "🔪" &&
-      box8.innerText === "🔪") ||
-    (box3.innerText === "🔪" &&
-      box6.innerText === "🔪" &&
-      box9.innerText === "🔪")
-  ) {
+	if (
+		(box1.innerText === '🔪' && box2.innerText === '🔪' && box3.innerText === '🔪') ||
+		(box4.innerText === '🔪' && box5.innerText === '🔪' && box6.innerText === '🔪') ||
+		(box7.innerText === '🔪' && box8.innerText === '🔪' && box9.innerText === '🔪') ||
+		(box1.innerText === '🔪' && box5.innerText === '🔪' && box9.innerText === '🔪') ||
+		(box7.innerText === '🔪' && box5.innerText === '🔪' && box3.innerText === '🔪') ||
+		(box1.innerText === '🔪' && box4.innerText === '🔪' && box7.innerText === '🔪') ||
+		(box2.innerText === '🔪' && box5.innerText === '🔪' && box8.innerText === '🔪') ||
+		(box3.innerText === '🔪' && box6.innerText === '🔪' && box9.innerText === '🔪')
+	) {
+		console.log(`${emoji} wins`);
+		displayResult.innerText = `${emoji} wins`;
+
+		console.log(turn);
+		complete = true;
+	} else if (
+		(box1.innerText === '🥔' && box2.innerText === '🥔' && box3.innerText === '🥔') ||
+		(box4.innerText === '🥔' && box5.innerText === '🥔' && box6.innerText === '🥔') ||
+		(box7.innerText === '🥔' && box8.innerText === '🥔' && box9.innerText === '🥔') ||
+		(box1.innerText === '🥔' && box5.innerText === '🥔' && box9.innerText === '🥔') ||
+		(box7.innerText === '🥔' && box5.innerText === '🥔' && box3.innerText === '🥔') ||
+		(box1.innerText === '🥔' && box4.innerText === '🥔' && box7.innerText === '🥔') ||
+		(box2.innerText === '🥔' && box5.innerText === '🥔' && box8.innerText === '🥔') ||
+		(box3.innerText === '🥔' && box6.innerText === '🥔' && box9.innerText === '🥔')
+	) {
     console.log(`${emoji} wins`);
     displayResult.innerText = `${emoji} wins`;
 
