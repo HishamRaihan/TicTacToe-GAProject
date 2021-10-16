@@ -1,7 +1,7 @@
 # EMAIL=h@hh.com PASSWORD=123 sh curl-scripts/auth/sign-up.sh
 
 # don't use a password you use for any real websites!
-curl "https://tic-tac-toe-api-development.herokuapp.com/sign-up" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
