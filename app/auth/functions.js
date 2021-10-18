@@ -49,8 +49,9 @@ function XtoO(box) {
 // make a post request each time the event is clicked
 
 startBtn.addEventListener("click", () => {
-  //adds event listener to each boxuare and bind the function
+  //adds event listener to each box and bind the function
   //to the element so we can pass it in
+  // binding each square to a new function
   box1.addEventListener("click", XtoO.bind(this, box1));
   box2.addEventListener("click", XtoO.bind(this, box2));
   box3.addEventListener("click", XtoO.bind(this, box3));
