@@ -40,7 +40,7 @@ const playerTurn = (turn) => {
 };
 
 //passes in a boxuare param and adds the X or O in to the text content of the html
-function XtoO(box) {
+function switchXtoO(box) {
   if (box.innerText === '' && complete === false) {
     box.textContent = playerTurn(turn);
     winningCondition();
@@ -53,15 +53,15 @@ startBtn.addEventListener('click', () => {
   //adds event listener to each box and bind the function
   //to the element so we can pass it in
   // binding each square to a new function
-  box1.addEventListener('click', XtoO.bind(this, box1));
-  box2.addEventListener('click', XtoO.bind(this, box2));
-  box3.addEventListener('click', XtoO.bind(this, box3));
-  box4.addEventListener('click', XtoO.bind(this, box4));
-  box5.addEventListener('click', XtoO.bind(this, box5));
-  box6.addEventListener('click', XtoO.bind(this, box6));
-  box7.addEventListener('click', XtoO.bind(this, box7));
-  box8.addEventListener('click', XtoO.bind(this, box8));
-  box9.addEventListener('click', XtoO.bind(this, box9));
+  box1.addEventListener('click', switchXtoO.bind(this, box1));
+  box2.addEventListener('click', switchXtoO.bind(this, box2));
+  box3.addEventListener('click', switchXtoO.bind(this, box3));
+  box4.addEventListener('click', switchXtoO.bind(this, box4));
+  box5.addEventListener('click', switchXtoO.bind(this, box5));
+  box6.addEventListener('click', switchXtoO.bind(this, box6));
+  box7.addEventListener('click', switchXtoO.bind(this, box7));
+  box8.addEventListener('click', switchXtoO.bind(this, box8));
+  box9.addEventListener('click', switchXtoO.bind(this, box9));
 });
 
 function winningCondition() {
