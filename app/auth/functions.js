@@ -75,8 +75,8 @@ function winningCondition() {
 		(box2.innerText === '🔪' && box5.innerText === '🔪' && box8.innerText === '🔪') ||
 		(box3.innerText === '🔪' && box6.innerText === '🔪' && box9.innerText === '🔪')
 	) {
-		console.log(`${emoji} wins`);
-		displayResult.innerText = `${emoji} wins`;
+		console.log(`${emoji} is the champion`);
+		displayResult.innerText = `${emoji} is the champion`;
 
 		console.log(turn);
 		complete = true;
@@ -90,8 +90,8 @@ function winningCondition() {
 		(box2.innerText === '🥔' && box5.innerText === '🥔' && box8.innerText === '🥔') ||
 		(box3.innerText === '🥔' && box6.innerText === '🥔' && box9.innerText === '🥔')
 	) {
-    console.log(`${emoji} wins`);
-    displayResult.innerText = `${emoji} wins`;
+    console.log(`${emoji} is the champion`);
+    displayResult.innerText = `${emoji} is the champion`;
 
     console.log(turn);
     complete = true;
@@ -121,9 +121,9 @@ function winningCondition() {
   //     box6.innerText === '🥔' &&
   //     box9.innerText === '🥔')
   // ) {
-  //   console.log(`${emoji} wins`);
+  //   console.log(`${emoji} is the champion`);
   //   //console.log(emoji);
-  //   displayResult.innerText = `${emoji} wins`;
+  //   displayResult.innerText = `${emoji} is the champion`;
   //   complete = true;
   } else if (turn === 8) {
     displayResult.innerText = 'Tie Game, Play Again';
