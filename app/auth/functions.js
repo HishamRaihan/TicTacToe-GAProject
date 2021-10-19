@@ -3,6 +3,7 @@
 const startBtn = document.getElementById("start-game");
 const resetBtn = document.getElementById("reset-game");
 const displayResult = document.getElementById("display-result");
+resetBtn.addEventListener("click", resetBoard);
 let boxes = document.querySelectorAll(".col-4");
 // let aud = document.getElementById("")
 // boxaures
@@ -145,4 +146,3 @@ function resetBoard() {
   });
   return turn;
 }
-resetBtn.addEventListener("click", resetBoard);
