@@ -4,7 +4,7 @@
 # VARIABLE=VALUE sh curl-scripts/auth/change-password.sh
 # TOKEN=2b50c85f4122cae0659facbf1ea319ae OLD_PW=123 NEW_PW=hhh sh curl-scripts/auth/change-password.sh
 
-curl "https://tic-tac-toe-api-development.herokuapp.com/change-password" \
+curl "https://tic-tac-toe-api-production.herokuapp.com/change-password" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \

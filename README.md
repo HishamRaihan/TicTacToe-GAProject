@@ -1,128 +1,30 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
-
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/main.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `sei/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-main.zip`.
-1. Rename the template directory from `browser-template-main` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace the `name` `seir-flex-831.browser-template` with the name of
-    your project in `package.json`.
-2. Move into the new project and `git init`.
-3. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-4. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-5. Install dependencies with `npm install`.
-6. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-7. Name the new repository with the same name used on Step 3.
-8. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled **"…or push an existing
-   repository from the command line."** Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-   > **Note:** This last step will rename your default branch to **main**. This branch name will be used when deploying.
-
-## Structure
-
-### App
-
-Developers should store JavaScript files in [`app`](app).
-The "manifest" or entry-point is
-[`app/app.js`](app/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`app/config.js`](app/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/index.scss`](app/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys main branch
-
-
-## Additional Resources
-
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+[![Hisham Raihan](public/READMELOGO.jpeg)](https://hishamraihan.github.io/TicTacToe-GAProject/) <-- Click To Play
+# Hishams Tic Tac Toe Project
+---
+## The BackStory
+- This project has allowed me to incorporate everything we have learned in this bootcamp up until now.
+- I used HTML, SCSS, JS, JQuery and learned how to use curl scirpts along with AJAX.
+- To me it was much more than a project - it was a big learning experience.
+- If I missed anything hopefully it will be made up in my styling.
+---
+## Instructions
+1. User must use Sign-Up form, once completed User will be prompted with and error or success message 
+      - POST REQUEST made will recieve either 200 OK or 400 error 
+2. If user recieved an error message, than the user must complete Sign-Up form again
+3. When User has completed Sign-Up form with correct credentials they will recieve a success message highlighted in green text
+4. User must input credentials into the Sign-In form, here they will also be prompted with a error or success message
+      - POST REQUEST made will recieve either 200 OK or 400 error
+5. If User input matched the Sign-Up credentials than the User will be get a success message and immediatly moved to the Playing Arena
+6. Once User is in the playing arena User will click on the Start Game button and Game will be made
+      - POST REQUEST made will recieve either 200 OK or 400 error
+7. User will be able to click on desired circle to place their move 
+      - starting move will be represented with X and Second move will be O
+      - In this particular game board users will be using a 🔪 for X and  🥔 for O
+8. Once User Wins they will be prompted with a winning message either with  🔪 || 🥔
+9. If User made a tie game they will be prompted with Tie game message
+10. User can choose to reset the game with the reset button which will remove all inline text from each circle
+11. User can choose to change password in the navbar 
+      - PATCH REQUEST made will recieve either 200 OK or 400 error message
+12. User can choose to Sign-out and the board will be Deleted
+      - DELETE REQUEST made will recieve either 200 OK or 400 error message
+13. User can play again!

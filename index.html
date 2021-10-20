@@ -3,7 +3,7 @@
     <head>
       <title>TicTacDeath</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -13,13 +13,25 @@
      <!-- <script src="./app/auth/logic.js" defer></script> -->
     </head>
     <body>
-      
+      <!-- <video src="./public/Background - 25552.mp4" loop autoplay></video> -->
+  
+      <!-- <video autoplay loop loop="true">
+        <source src="./public/Background - 25552.mp4" type="video/mp4">
+        <source src="./public/Background - 25552.webm" type="video/webm">
+        <source src="./public/Background - 25552.ogg" type="video/ogg">
+        
+        
+      </video> -->
+        
+     <audio controls loop autoplay>
+     <source src="./public/2017-11-15_-_Super_Hero_Showdown_-_David_Fesliyan.mp3" type="audio/mpeg"> 
+    </audio>
       <section id="before-sign-in">
-        <h1>Tic Tac Death</h1>
+        <h1>TIC TAC TOE</h1>
         <h2> Care To Play A Game?</h2>
         <!-- Sign up form goes here -->
         <div class="everything">
-
+          
           <div class="ss-form"> 
             
             <div class="card" id="front-card">
@@ -32,7 +44,7 @@
                     <input type="email" name="credentials[email]" placeholder="Email" required>
                     <input type="password" name="credentials[password]" placeholder="Password" required>
                     <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
-                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                    <button class="btn btn-outline-light" type="submit">Sign Up</button>
                   </fieldset>
                 </form>
                 <!-- Sign In form goes here -->
@@ -42,15 +54,15 @@
                     <legend>Sign In</legend>
                     <input type="email" name="credentials[email]" placeholder="Email" required>
                     <input type="password" name="credentials[password]" placeholder="Password" required>
-                    <button class="btn btn-success" type="submit">Sign In</button>
+                    <button class="btn btn-outline-light" type="submit">Sign In</button>
                   </fieldset>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        </section>
-        
+      </section>
+      
       <!-- only want to be visible after we sign-in
         by default it should not be displayed 
         our scss will help us with that-->
@@ -66,9 +78,6 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
         </li>
     
         <li class="nav-item dropdown">
@@ -128,6 +137,7 @@
                   <div class="col-4 box" name = "game[cells][7]" id="box8"></div>
                   <div class="col-4 box" name = "game[cells][8]" id="box9"></div>
                   
+
                 </div>
                 
               </div>
@@ -140,61 +150,7 @@
             <button class = "button-style btn btn-outline-light" id="start-game">Start Game</button>
             <button class = "button-style btn btn-outline-light" id="reset-game">Reset Game</button>
         </div>
-          <!-- <div class="b-out">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">B***h Out</button>
-          </div> -->
-          
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Why do you want to give up</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-
-      <div class="modal-body">
-       <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-    <div class="mb-3">
-      <input type="password" class="form-control" id="inputPassword" placeholder="password">
-    </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">How are you feeling today?</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-       <!-- <form id="change-password" class="border"> -->
-          <!-- fieldset is used to group multiple inputs together -->
-          <!-- <fieldset>
-            <legend>Change Password</legend>
-            <input type="password" name="passwords[old]" placeholder="Old Password" required>
-            <input type="password" name="passwords[new]" placeholder="New Password" required>
-            <button class="btn btn-primary" type="submit">Change Password</button>
-          </fieldset>
-        </form> -->
-
-        <!-- <form id="sign-out" class="border"> -->
-          <!-- fieldset is used to group multiple inputs together -->
-          <!-- <fieldset>
-            <h3>Sign Out</h3>
-            <button class="btn btn-danger">Sign Out</button>
-          </fieldset>
-        </form> -->
-
-
+        
       </section>
       <!-- create a section for our user feedback -->
       <section>
