@@ -104,8 +104,8 @@ function winningCondition() {
   ) {
     console.log(`${emoji} is the champion`);
     displayResult.innerText = `${emoji} is the champion`;
-
-    console.log(turn);
+    // logs player won with how many turns
+    console.log(`Player: ${emoji} won in ${turn + 1} turns`);
     complete = true;
   } else if (
     (box1.innerText === "🥔" &&
