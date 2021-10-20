@@ -7,10 +7,10 @@
 //     $(this).attr("src", $(this).attr("src").replace(".mp4", "_c.mp4"));
 //   });
 
-const startBtn = document.getElementById("start-game");
-const resetBtn = document.getElementById("reset-game");
+const startButton = document.getElementById("start-game");
+const resetButton = document.getElementById("reset-game");
 const displayResult = document.getElementById("display-result");
-resetBtn.addEventListener("click", resetBoard);
+resetButton.addEventListener("click", resetBoard);
 let boxes = document.querySelectorAll(".col-4");
 // let vid = document.getElementById("bgvid");
 // vid.play();
@@ -58,7 +58,7 @@ function switchXtoO(box) {
 }
 // make a post request each time the event is clicked
 
-startBtn.addEventListener("click", () => {
+startButton.addEventListener("click", () => {
   //adds event listener to each box and bind the function
   //to the element so we can pass it in
   // binding each square to a new function
