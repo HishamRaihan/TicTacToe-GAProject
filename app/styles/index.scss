@@ -19,24 +19,24 @@ $secondary: white;
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
   }
-  video{
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-  }
+  // video{
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   object-fit: cover;
+  //   z-index: -1;
+  //   height: 100%;
+  //   width: 100%;
+  // }
 
-// body {
-//   // background-color: $secondary;
-//   height: 130vh;
-//   background-image: url('https://besthqwallpapers.com/Uploads/29-1-2020/120132/thumb2-4k-fire-textures-burning-backgrounds-fireplace-bonfire.jpg');
-//   background-size:cover;
-//   background-repeat: no-repeat;
+body {
+  // background-color: $secondary;
+
+  background-image: url('https://acegif.com/wp-content/gifs/fire-17.gif');
+  background-size:cover;
+  background-repeat: no-repeat;
   
-// }
+}
 .everything{
   
   color: antiquewhite;
