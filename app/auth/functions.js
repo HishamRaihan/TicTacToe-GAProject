@@ -62,6 +62,8 @@ startButton.addEventListener("click", () => {
   //adds event listener to each box and bind the function
   //to the element so we can pass it in
   // binding each square to a new function
+  // bidning box to switchXtoO function
+  // using the object with 'this' 
   box1.addEventListener("click", switchXtoO.bind(this, box1));
   box2.addEventListener("click", switchXtoO.bind(this, box2));
   box3.addEventListener("click", switchXtoO.bind(this, box3));
