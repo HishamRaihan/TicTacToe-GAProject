@@ -28,3 +28,7 @@
 12. User can choose to Sign-out and the board will be Deleted
       - DELETE REQUEST made will recieve either 200 OK or 400 error message
 13. User can play again!
+
+## WireFrame
+Hishams Wireframe file
+![**Hishams project_1_wireframes**](wireframe/HishamsWireframe.jpeg)
