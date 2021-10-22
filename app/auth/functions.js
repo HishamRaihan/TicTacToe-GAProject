@@ -63,8 +63,8 @@ startButton.addEventListener("click", () => {
   //to the element so we can pass it in
   // binding each square to a new function
   // bidning box to switchXtoO function
-  // using the object with 'this' 
-  box1.addEventListener("click", switchXtoO.bind(this, box1));
+  // using the object with 'this' -> pointing to window because we have parameter
+  box1.addEventListener("click", switchXtoO.bind(this, box1)); 
   box2.addEventListener("click", switchXtoO.bind(this, box2));
   box3.addEventListener("click", switchXtoO.bind(this, box3));
   box4.addEventListener("click", switchXtoO.bind(this, box4));
