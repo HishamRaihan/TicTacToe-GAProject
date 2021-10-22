@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>TicTacDeath</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+     <!-- <script src="./app/auth/logic.js" defer></script> -->
+    </head>
+    <body>
+      <video src="./public/Background - 25552.mp4" loop autoplay></video>
+  
+      <!-- <video autoplay loop loop="true">
+        <source src="./public/Background - 25552.mp4" type="video/mp4">
+        <source src="./public/Background - 25552.webm" type="video/webm">
+        <source src="./public/Background - 25552.ogg" type="video/ogg">
+        
+        
+      </video> -->
+        
+     <audio controls loop autoplay>
+     <source src="./public/2017-11-15_-_Super_Hero_Showdown_-_David_Fesliyan.mp3" type="audio/mpeg"> 
+    </audio>
+      <section id="before-sign-in">
+        <h1>TIC TAC TOE</h1>
+        <h2> Care To Play A Game?</h2>
+        <!-- Sign up form goes here -->
+        <div class="everything">
+          
+          <div class="ss-form"> 
+            
+            <div class="card" id="front-card">
+              <div class="card-body">
+                <form id="sign-up" class="border">
+                  <!-- fieldset is used to group multiple inputs together -->
+                  
+                  <fieldset>
+                    <legend>Sign Up</legend>
+                    <input type="email" name="credentials[email]" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" required>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation" required>
+                    <button class="btn btn-outline-light" type="submit">Sign Up</button>
+                  </fieldset>
+                </form>
+                <!-- Sign In form goes here -->
+                <form id="sign-in" class="border">
+                  <!-- fieldset is used to group multiple inputs together -->
+                  <fieldset>
+                    <legend>Sign In</legend>
+                    <input type="email" name="credentials[email]" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" required>
+                    <button class="btn btn-outline-light" type="submit">Sign In</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- only want to be visible after we sign-in
+        by default it should not be displayed 
+        our scss will help us with that-->
+      <!-- Change password and sign-out forms -->
+      <section id="after-sign-in">
+        <nav class="navbar navbar-collapse-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Welcom To Tic-Tac-Toe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+    
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Help
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Ask Sean For Help</a></li>
+            <li><a class="dropdown-item" href="#">Ask Weston For Help</a></li>
+            <!-- <li><hr class="dropdown-divider"></li> -->
+            <li><a class="dropdown-item" href="#">Ask Ben For Help</a></li>
+          </ul>
+          <li>
+           <!-- <form id="change-password"> -->
+          <!-- fieldset is used to group multiple inputs together -->
+          <form id="change-password">
+            <input type="password" name="passwords[old]" placeholder="Old Password" required>
+            <input type="password" name="passwords[new]" placeholder="New Password" required>
+            <button class="btn btn-outline-light" type="submit">Change Password</button>
+          </form>
+        <!-- </form> -->
+            <!-- <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign In 
+          </button> -->
+          <button class="btn btn-danger" id="sign-out">Sign Out</button>
+        </li>
+        <li>
+          
+        </li>
+        
+        
+          
+        <!-- <div class="searchBar">
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+    </div>
+  </div>
+</nav>
+<!-- required 'container' class wrapper for our rows/columns -->
+<div class="tictactoeboard">
+  <div class="card" id="board-card" style="width: 500px;">
+    <div>
+        <h2  id="display-result"></h2>
+    </div>
+            <div class="card-body">
+              
+              <div class="container">
+                  <div class="col-4 box" name = "game[cells][0]" id="box1"></div>
+                  <div class="col-4 box" name = "game[cells][1]" id="box2"></div>
+                  <div class="col-4 box" name = "game[cells][2]" id="box3"></div>
+                  <div class="col-4 box" name = "game[cells][3]" id="box4"></div>
+                  <div class="col-4 box" name = "game[cells][4]" id="box5"></div>
+                  <div class="col-4 box" name = "game[cells][5]" id="box6"></div>
+                  <div class="col-4 box" name = "game[cells][6]" id="box7"></div>
+                  <div class="col-4 box" name = "game[cells][7]" id="box8"></div>
+                  <div class="col-4 box" name = "game[cells][8]" id="box9"></div>
+                  
+
+                </div>
+                
+              </div>
+            </div>
+          </div>
+            
+          <div class="game-buttons">
+            <button class = "button-style btn btn-outline-light" id="start-game">Start Game</button>
+            <button class = "button-style btn btn-outline-light" id="reset-game">Reset Game</button>
+        </div>
+        
+      </section>
+      <!-- create a section for our user feedback -->
+      <section>
+        <div id="error-message"></div>
+        <div id="user-display"></div>
+      </section>
+    </body>
+
+</html>
