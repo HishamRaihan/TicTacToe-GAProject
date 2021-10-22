@@ -19,24 +19,24 @@ $secondary: white;
   and (-webkit-min-device-pixel-ratio: 2)
   and (min-resolution: 192dpi) { 
   }
-  // video{
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   object-fit: cover;
-  //   z-index: -1;
-  //   height: 100%;
-  //   width: 100%;
-  // }
+  video{
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
 
-body {
-  // background-color: $secondary;
+// body {
+//   // background-color: $secondary;
 
-  background-image: url('https://64.media.tumblr.com/d688513ff7cb24879bcb07117aa67744/320a3e399d7852f4-f1/s512x350/74b9c77e8c76089bbe0f0629d776386eb6364182.gif');
-  background-size:cover;
-  background-repeat: no-repeat;
+//   background-image: url('https://64.media.tumblr.com/d688513ff7cb24879bcb07117aa67744/320a3e399d7852f4-f1/s512x350/74b9c77e8c76089bbe0f0629d776386eb6364182.gif');
+//   background-size:cover;
+//   background-repeat: no-repeat;
   
-}
+// }
 .everything{
   
   color: antiquewhite;
